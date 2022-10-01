@@ -15,8 +15,8 @@ class Ball(Obj):
         self.yVel = genY(1)
         logger.log("debug", f"BAll X and Y\nX => {self.xVel}\nY => {self.yVel}\n")
     def move(self):
-        self.xVel *= 1.0005
-        self.yVel *= 1.0005
+        self.xVel *= 1.001
+        self.yVel *= 1.001
         self.x += self.xVel
         self.y += self.yVel
     def resetBall(self):
