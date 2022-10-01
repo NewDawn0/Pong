@@ -9,7 +9,7 @@ logger.addType(('debug', ['\033[33m', 'DEBUG     ', 2]))
 ## Ball Class ##
 class Ball(Obj):
     BALL_VELOCITY = BALL_VELOCITY
-    def __init__(self, x, y):
+    def __init__(self, x: int, y: int):
         super().__init__(x, y)
         self.xVel = genX()
         self.yVel = genY(1)

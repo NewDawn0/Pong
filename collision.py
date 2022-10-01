@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 from const import *
+from ball import Ball
+from paddle import Paddle
 ## Collision Class ##
 class Collision:
     @staticmethod
-    def collisionHandler(ball, lPaddle, rPaddle):
+    def collisionHandler(ball: Ball, lPaddle: Paddle, rPaddle: Paddle):
         if ball.y + ball.height >= HEIGHT:
             ball.yVel *= -1
         elif ball.y - ball.height <= 0:
@@ -23,7 +25,7 @@ class Collision:
             y_vel = difference_in_y / reduction_factor
             ball.yVel = -1 * y_vel
     @staticmethod
-    def movementHandler(keys, lPaddle, rPaddle):
+    def movementHandler(keys: pygame.key.ScancodeWrapper, lPaddle: Paddle, rPaddle: Paddle):
         if keys[pygame.K_w] and lPaddle.y - lPaddle.PADDLE_VELOCITY >= 0:
             lPaddle.move(up=True)
         if keys[pygame.K_s] and lPaddle.y + lPaddle.PADDLE_VELOCITY + lPaddle.height <= HEIGHT:
