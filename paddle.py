@@ -12,7 +12,4 @@ class Paddle(Obj):
     def move(self, up=True):
         if up: self.y -= self.PADDLE_VELOCITY
         else: self.y += self.PADDLE_VELOCITY
-    def reset(self):
-        self.x = self.origX
-        self.y = self.origY
 

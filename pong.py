@@ -27,10 +27,15 @@ class Main(Initializer):
 
             if self.ball.x < 0:
                 self.rScore += 1
-                self.ball.reset()
+                self.ball.resetBall()
+                self.lPaddle.reset()
+                self.rPaddle.reset()
+
             elif self.ball.x > WIDTH:
                 self.lScore += 1
-                self.ball.reset()
+                self.ball.resetBall()
+                self.lPaddle.reset()
+                self.rPaddle.reset()
 
             won = False
             if self.lScore >= WINNING_SCORE:

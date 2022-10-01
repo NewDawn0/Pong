@@ -12,14 +12,15 @@ class Ball(Obj):
     def __init__(self, x, y):
         super().__init__(x, y)
         self.xVel = genX()
-        self.yVel = genY(2)
+        self.yVel = genY(1)
         logger.log("debug", f"BAll X and Y\nX => {self.xVel}\nY => {self.yVel}\n")
     def move(self):
+        self.xVel *= 1.0005
+        self.yVel *= 1.0005
         self.x += self.xVel
         self.y += self.yVel
-    def reset(self):
-        self.x = self.origX
-        self.y = self.origY
+    def resetBall(self):
+        self.reset()
         self.xVel = genX()
         self.yVel = genY(2)
         logger.log("debug", f"BAll X and Y\nX => {self.xVel}\nY => {self.yVel}\n")

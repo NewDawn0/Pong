@@ -13,6 +13,9 @@ class Obj:
     def override(self, width, height):
         self.height = height
         self.width = width
+    def reset(self):
+        self.x = self.origX
+        self.y = self.origY
     def drawRect(self, win, col):
         pygame.draw.rect(win, col, (self.x, self.y, self.width, self.height))
     def drawCirc(self, win, col):
